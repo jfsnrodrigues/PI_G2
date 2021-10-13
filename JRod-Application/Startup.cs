@@ -1,6 +1,10 @@
+using JRod_Application.Data;
+using JRod_Application.Data.Repositories;
+using JRod_Application.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -25,6 +29,12 @@ namespace JRod_Application
         {
             services.AddControllersWithViews();
             services.AddRazorPages();
+            services.AddTransient<ITaskServices, TaskServices>();
+            services.AddTransient<ITaskRepository, TaskRepository>();
+            services.AddTransient(typeof(IRepository<>), typeof(Repository<>));
+            services.AddTransient<IUserRepository, UserRepository>();
+
+            services.AddDbContext<Context>(options => options.UseSqlServer(Configuration.GetConnectionString("DBContextConnection")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
