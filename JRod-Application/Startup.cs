@@ -32,6 +32,7 @@ namespace JRod_Application
             services.AddTransient<ITaskServices, TaskServices>();
             services.AddTransient<ITaskRepository, TaskRepository>();
             services.AddTransient(typeof(IRepository<>), typeof(Repository<>));
+            services.AddTransient<IUserServices, UserServices>();
             services.AddTransient<IUserRepository, UserRepository>();
 
             services.AddDbContext<Context>(options => options.UseSqlServer(Configuration.GetConnectionString("DBContextConnection")));

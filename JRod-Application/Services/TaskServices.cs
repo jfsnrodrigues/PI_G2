@@ -8,20 +8,25 @@ namespace JRod_Application.Services
     public class TaskServices : ITaskServices
     {
         readonly ITaskRepository _taskRepository;
-        public TaskServices(ITaskRepository taskRepository)
+        readonly IUserServices _userServices;
+        public TaskServices(ITaskRepository taskRepository, IUserServices userServices)
         {
             _taskRepository = taskRepository;
+            _userServices = userServices;
         }
 
         public IEnumerable<Task> GetAll()
         {
-            return _taskRepository.GetAll()
-                .Adapt<IEnumerable<Task>>();
+            var allTasksRepo = _taskRepository
+                .GetAll(x => x.User);
+
+            var allTasks = allTasksRepo.Adapt<IEnumerable<Task>>();
+            return allTasks;
         }
 
         public Task Get(int idTask)
         {
-            return _taskRepository.Get(idTask)
+            return _taskRepository.Get(idTask, x => x.User)
                 .Adapt<Task>();
         }
 
@@ -43,8 +48,8 @@ namespace JRod_Application.Services
         public Task Add(Task task)
         {
             return _taskRepository
-                .Add(task.Adapt<Data.DataModels.Task>())
-                .Adapt<Task>();
+              .Add(task.Adapt<Data.DataModels.Task>())
+              .Adapt<Task>();
         }
 
         public void Delete(int taskId)

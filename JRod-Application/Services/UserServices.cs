@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace JRod_Application.Services
 {
-    public class UserServices
+    public class UserServices : IUserServices
     {
         readonly IUserRepository _userRepository;
 
@@ -14,7 +14,7 @@ namespace JRod_Application.Services
             _userRepository = userRepository;
         }
 
-        public IEnumerable<User> Get()
+        public IEnumerable<User> GetAll()
         {
             return _userRepository.GetAll()
                 .Adapt<IEnumerable<User>>();
@@ -41,6 +41,11 @@ namespace JRod_Application.Services
             return _userRepository
                 .Add(user.Adapt<Data.DataModels.User>())
                 .Adapt<User>();
+        }
+
+        public void Delete(int userId)
+        {
+            _userRepository.Delete(userId);
         }
     }
 }

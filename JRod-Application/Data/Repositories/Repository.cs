@@ -1,5 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
+using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 
 namespace JRod_Application.Data.Repositories
 {
@@ -24,13 +27,36 @@ namespace JRod_Application.Data.Repositories
         {
             T model = Get(modelId);
             _context.Set<T>().Remove(model);
+            _context.SaveChanges();
         }
 
         public T Get(int modelId)
            => _context.Set<T>().Find(modelId);
 
+        public T Get(int modelId, params Expression<Func<T, object>>[] includes)
+        {
+            DbSet<T> dbSet = _context.Set<T>();
+
+            foreach (var include in includes)
+                dbSet.Include(include);
+
+            return dbSet.Find(modelId);
+        }
+
         public IEnumerable<T> GetAll()
             => _context.Set<T>().ToList();
+
+        public IEnumerable<T> GetAll(params Expression<Func<T, object>>[] includes)
+        {
+            DbSet<T> dbSet = _context.Set<T>();
+
+            IEnumerable<T> query = null;
+
+            foreach (var include in includes)
+                query = dbSet.Include(include);
+
+            return query ?? dbSet;
+        }
 
         public T Update(T model)
         {
