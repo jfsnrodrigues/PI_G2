@@ -25,6 +25,8 @@
 
   <ItemGroup>
     <Folder Include="Migrations\" />
+    <Folder Include="Migrations\AuthMigrations\" />
+    <Folder Include="Migrations\DBMigrations\" />
   </ItemGroup>
 
 </Project>

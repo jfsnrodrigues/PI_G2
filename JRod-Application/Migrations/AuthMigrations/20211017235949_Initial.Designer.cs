@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace JRod_Application.Migrations.AuthMigrations
 {
     [DbContext(typeof(AuthDBContext))]
-    [Migration("20211014013251_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20211017235949_Initial")]
+    partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
