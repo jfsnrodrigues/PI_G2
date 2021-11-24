@@ -1,30 +1,31 @@
 ﻿using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 
 namespace JRod_Application.Enums
 {
     public enum Assunto
     {
-        [Description("Acervo Analise Emissao")]
+        [Display(Name = "Acervo Analise Emissao")]
         AcervoAnaliseEmissao = 1,
-        [Description("Acervo Despacho Gestor")]
+        [Display(Name = "Acervo Despacho Gestor")]
         AcervoDespachoGestor,
-        [Description("ART")]
+        [Display(Name = "ART")]
         ART,
-        [Description("Denuncia")]
+        [Display(Name = "Denuncia")]
         Denuncia,
-        [Description("Empresa")]
+        [Display(Name = "Empresa")]
         Empresa,
-        [Description("Entidade")]
+        [Display(Name = "Entidade")]
         Entidade,
-        [Description("Financeiro")]
+        [Display(Name = "Financeiro")]
         Financeiro,
-        [Description("Fiscalização")]
+        [Display(Name = "Fiscalização")]
         Fiscalizacao,
-        [Description("Escola")]
+        [Display(Name = "Escola")]
         Escola,
-        [Description("Profissional")]
+        [Display(Name = "Profissional")]
         Profissional,
-        [Description("Outro")]
+        [Display(Name = "Outro")]
         Outro,
     }
 }

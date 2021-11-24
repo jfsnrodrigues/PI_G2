@@ -37,7 +37,7 @@ namespace JRod_Application.Controllers
             var options = new List<SelectListItem>
             {
                 new SelectListItem {
-                    Text = "All",
+                    Text = "Todos",
                     Value = "0",
                     Selected = ( userId == 0) }
             };
@@ -75,6 +75,29 @@ namespace JRod_Application.Controllers
             try
             {
                 _services.Add(task);
+            }
+            catch (KeyNotFoundException ex)
+            {
+                return NotFound(ex.Message);
+            }
+
+
+            return RedirectToAction("Index", "Home");
+        }
+
+        // POST: Tasks/Create
+        // To protect from overposting attacks, enable the specific properties you want to bind to.
+        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Update([Bind("TaskId,Title,Description,Status,UserId,DataInicio,Protocolo,Quantidade,Interessado,CreaspReg,ProvidenciasAdotadas,DataFim,TipoAtividade,TipoTrabalho,Assunto,TipoServico,Camara")] Models.Task task)
+        {
+            if (!ModelState.IsValid)
+                return View(task);
+
+            try
+            {
+                _services.Update(task);
             }
             catch (KeyNotFoundException ex)
             {

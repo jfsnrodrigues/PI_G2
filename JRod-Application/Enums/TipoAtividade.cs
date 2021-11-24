@@ -1,43 +1,44 @@
 ﻿using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 
 namespace JRod_Application.Enums
 {
     public enum TipoAtividade
     {
-        [Description("Protocolo (Web)")]
+        [Display(Name = "Protocolo (Web)")]
         ProtocoloWeb = 1,
 
-        [Description("Protocolo (Creadoc)")]
+        [Display(Name = "Protocolo (Creadoc)")]
         ProtocoloCreadoc,
 
-        [Description("Processo")]
+        [Display(Name = "Processo")]
         Processo,
 
-        [Description("Ordem de Serviço")]
+        [Display(Name = "Ordem de Serviço")]
         OrdemServico,
 
-        [Description("E-mail")]
+        [Display(Name = "E-mail")]
         Email,
 
-        [Description("Telefone")]
+        [Display(Name = "Telefone")]
         Telefone,
 
-        [Description("Mensagens Celular")]
+        [Display(Name = "Mensagens Celular")]
         MensagensCelular,
 
-        [Description("Arrumação/Separação de Carteiras")]
+        [Display(Name = "Arrumação/Separação de Carteiras")]
         ArrumaçãoSeparacaoCarteiras,
 
-        [Description("Digitalização de Imagens")]
+        [Display(Name = "Digitalização de Imagens")]
         DigitalizacaoImagens,
 
-        [Description("Disparo de Carteiras")]
+        [Display(Name = "Disparo de Carteiras")]
         DisparoCarteiras,
 
-        [Description("Recebimento/Abertura de Malotes Diversos")]
+        [Display(Name = "Recebimento/Abertura de Malotes Diversos")]
         RecebimentoAberturaMalotesDiversos,
 
-        [Description("Outros")]
+        [Display(Name = "Outros")]
         Outros,
     }
 }

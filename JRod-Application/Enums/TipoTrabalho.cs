@@ -1,13 +1,14 @@
 ﻿using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 
 namespace JRod_Application.Enums
 {
     public enum TipoTrabalho
     {
-        [Description("Presencial")]
+        [Display(Name = "Presencial")]
         Presencial = 1,
 
-        [Description("Remoto")]
+        [Display(Name = "Remoto")]
         Remoto
     }
 }

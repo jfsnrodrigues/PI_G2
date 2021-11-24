@@ -1,130 +1,131 @@
 ﻿using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 
 namespace JRod_Application.Enums
 {
     public enum TipoServico
     {
-        [Description("CAT c/ Reg. Atestado - Ativ Concluída")]
+        [Display(Name = "CAT c/ Reg. Atestado - Ativ Concluída")]
         CatComRegAtestadoAtivConcluida = 1,
-        [Description("CAT c/ Reg. Atestado - Ativ Andamento")]
+        [Display(Name = "CAT c/ Reg. Atestado - Ativ Andamento")]
         CatComRegAtestadoAtivAndamento,
-        [Description("CAT c/ Reg. Atestado - Complementar")]
+        [Display(Name = "CAT c/ Reg. Atestado - Complementar")]
         CatComRegAtestadoComplementar,
-        [Description("CAT sem Registro de Atestado")]
+        [Display(Name = "CAT sem Registro de Atestado")]
         CatSemRegistroAtestado,
-        [Description("2ª via de CAT")]
+        [Display(Name = "2ª via de CAT")]
         SegundaViaCat,
-        [Description("Substituição de CAT c/ Novo Atestado")]
+        [Display(Name = "Substituição de CAT c/ Novo Atestado")]
         SubstituicaoCatComNovoAtestado,
-        [Description("Certidão")]
+        [Display(Name = "Certidão")]
         Certidao,
-        [Description("Consulta")]
+        [Display(Name = "Consulta")]
         Consulta,
-        [Description("Elaboração de Ofício")]
+        [Display(Name = "Elaboração de Ofício")]
         ElaboracaoOficio,
-        [Description("Elaboração de Memorando")]
+        [Display(Name = "Elaboração de Memorando")]
         ElaboracaoMemorando,
-        [Description("Regularização de ART")]
+        [Display(Name = "Regularização de ART")]
         RegularizacaoArt,
-        [Description("Baixa ART - Rescisão Contratual")]
+        [Display(Name = "Baixa ART - Rescisão Contratual")]
         BaixaArtRescisaoContratual,
-        [Description("Baixa ART - Interrupção de Reg. do RT")]
+        [Display(Name = "Baixa ART - Interrupção de Reg. do RT")]
         BaixaArtInterrupcaoRegRt,
-        [Description("Baixa ART - Baixa de Cargo/Função")]
+        [Display(Name = "Baixa ART - Baixa de Cargo/Função")]
         BaixaArtBaixaCargoFuncao,
-        [Description("Baixa ART - Paralisação de Obra/Serviço")]
+        [Display(Name = "Baixa ART - Paralisação de Obra/Serviço")]
         BaixaArtParalisacaoObraServico,
-        [Description("Baixa ART - Substituição de RT")]
+        [Display(Name = "Baixa ART - Substituição de RT")]
         BaixaArtSubstituicaoRt,
-        [Description("Baixa ART - Reg. da Empresa Cancelado")]
+        [Display(Name = "Baixa ART - Reg. da Empresa Cancelado")]
         BaixaArtRegEmpresaCancelado,
-        [Description("Canc. ART - Contrato não executado")]
+        [Display(Name = "Canc. ART - Contrato não executado")]
         CancArtContratoNaoExecutado,
-        [Description("Canc. ART - Ativ. Téc. não executada")]
+        [Display(Name = "Canc. ART - Ativ. Téc. não executada")]
         CancArtAtivTecNaoExecutada,
-        [Description("Apuração de Denúncia")]
+        [Display(Name = "Apuração de Denúncia")]
         ApuracaoDenuncia,
-        [Description("Abertura de Processo")]
+        [Display(Name = "Abertura de Processo")]
         AberturaProcesso,
-        [Description("Registro Novo")]
+        [Display(Name = "Registro Novo")]
         RegistroNovo,
-        [Description("Alteração de Contrato Social/Estatuto")]
+        [Display(Name = "Alteração de Contrato Social/Estatuto")]
         AlteracaoContratoSocialEstatuto,
-        [Description("Indicação de RT")]
+        [Display(Name = "Indicação de RT")]
         IndicacaoRt,
-        [Description("Renovação de RT")]
+        [Display(Name = "Renovação de RT")]
         RenovacaoRt,
-        [Description("Baixa de RT")]
+        [Display(Name = "Baixa de RT")]
         BaixaRt,
-        [Description("Cancelamento com comprovação")]
+        [Display(Name = "Cancelamento com comprovação")]
         CancelamentoComComprovacao,
-        [Description("Cancelamento sem comprovação")]
+        [Display(Name = "Cancelamento sem comprovação")]
         CancelamentoSemComprovacao,
-        [Description("Visto em Registro")]
+        [Display(Name = "Visto em Registro")]
         VistoEmRegistro,
-        [Description("Reabilitação de Registro")]
+        [Display(Name = "Reabilitação de Registro")]
         ReabilitacaoRegistro,
-        [Description("Boleto de Anuidade(s)")]
+        [Display(Name = "Boleto de Anuidade(s)")]
         BoletoAnuidade,
-        [Description("Parcelamento de Anuidade(s)")]
+        [Display(Name = "Parcelamento de Anuidade(s)")]
         ParcelamentoAnuidade,
-        [Description("Documentos de Atualização")]
+        [Display(Name = "Documentos de Atualização")]
         DocumentosAtualizacao,
-        [Description("Prestação de Contas")]
+        [Display(Name = "Prestação de Contas")]
         PrestacaoContas,
-        [Description("Solicitações diversas")]
+        [Display(Name = "Solicitações diversas")]
         SolicitacoesDiversas,
-        [Description("Desconto - Recém Formado")]
+        [Display(Name = "Desconto - Recém Formado")]
         DescontoRecemFormado,
-        [Description("Desconto - Tempo de Registro")]
+        [Display(Name = "Desconto - Tempo de Registro")]
         DescontoTempoRegistro,
-        [Description("Desconto - Portador de Doença Grave")]
+        [Display(Name = "Desconto - Portador de Doença Grave")]
         DescontoPortadorDoencaGrave,
-        [Description("Reemb. Anuidade - Pgto a maior")]
+        [Display(Name = "Reemb. Anuidade - Pgto a maior")]
         ReembAnuidadePgtoMaior,
-        [Description("Reemb. Anuidade - Duplicidade")]
+        [Display(Name = "Reemb. Anuidade - Duplicidade")]
         ReembAnuidadeDuplicidade,
-        [Description("Reemb. ART - Obra/serviço não exec.")]
+        [Display(Name = "Reemb. ART - Obra/serviço não exec.")]
         ReembArtObraServiçoNaoExec,
-        [Description("Reemb. ART - Pgto a maior")]
+        [Display(Name = "Reemb. ART - Pgto a maior")]
         ReembArtPgtoMaior,
-        [Description("Reemb. ART - Duplicidade")]
+        [Display(Name = "Reemb. ART - Duplicidade")]
         ReembArtDuplicidade,
-        [Description("Reemb. Taxa - Pgto a maior")]
+        [Display(Name = "Reemb. Taxa - Pgto a maior")]
         ReembTaxaPgtoMaior,
-        [Description("Reemb. Taxa - Duplicidade")]
+        [Display(Name = "Reemb. Taxa - Duplicidade")]
         ReembTaxaDuplicidade,
-        [Description("Reemb. Taxa - Serviço não prestado")]
+        [Display(Name = "Reemb. Taxa - Serviço não prestado")]
         ReembTaxaServicoNaoPrestado,
-        [Description("Cadastramento Escola")]
+        [Display(Name = "Cadastramento Escola")]
         CadastramentoEscola,
-        [Description("Cadastramento Curso")]
+        [Display(Name = "Cadastramento Curso")]
         CadastramentoCurso,
-        [Description("Envio de documentos")]
+        [Display(Name = "Envio de documentos")]
         EnvioDocumentos,
-        [Description("Registro com Atestado")]
+        [Display(Name = "Registro com Atestado")]
         RegistroComAtestado,
-        [Description("Registro com Diploma")]
+        [Display(Name = "Registro com Diploma")]
         RegistroComDiploma,
-        [Description("Efetivação de Registro")]
+        [Display(Name = "Efetivação de Registro")]
         EfetivacaoRegistro,
-        [Description("Anotação em Registro")]
+        [Display(Name = "Anotação em Registro")]
         AnotacaoRegistro,
-        [Description("2ª via de Carteira")]
+        [Display(Name = "2ª via de Carteira")]
         SegundaViaCarteira,
-        [Description("Prorrogação de Registro Provisório")]
+        [Display(Name = "Prorrogação de Registro Provisório")]
         ProrrogacaoRegistroProvisorio,
-        [Description("Recadastramento")]
+        [Display(Name = "Recadastramento")]
         Recadastramento,
-        [Description("Interrupção de Registro")]
+        [Display(Name = "Interrupção de Registro")]
         InterrupcaoRegistro,
-        [Description("Recurso de Interrupção de Registro")]
+        [Display(Name = "Recurso de Interrupção de Registro")]
         RecursoInterrupcaoRegistro,
-        [Description("Cancelamento de Registro")]
+        [Display(Name = "Cancelamento de Registro")]
         CancelamentoRegistro,
-        [Description("Reciprocidade CONFEA/OEP")]
+        [Display(Name = "Reciprocidade CONFEA/OEP")]
         ReciprocidadeConfeaOep,
-        [Description("Outros")]
+        [Display(Name = "Outros")]
         Outros
     }
 }

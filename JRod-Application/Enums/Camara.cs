@@ -1,28 +1,29 @@
 ﻿using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 
 namespace JRod_Application.Enums
 {
     public enum Camara
     {
-        [Description("Nenhuma")]
+        [Display(Name = "Nenhuma")]
         Nenhuma,
-        [Description("Civil (CEEC)")]
+        [Display(Name = "Civil (CEEC)")]
         CivilCEEC,
-        [Description("Elétrica (CEEE)")]
+        [Display(Name = "Elétrica (CEEE)")]
         EletricaCEEE,
-        [Description("Mecânica (CEEMM)")]
+        [Display(Name = "Mecânica (CEEMM)")]
         MecanicaCEEMM,
-        [Description("Agronomia (CEA)")]
+        [Display(Name = "Agronomia (CEA)")]
         AgronomiaCEA,
-        [Description("Agrimensura (CEEA)")]
+        [Display(Name = "Agrimensura (CEEA)")]
         AgrimensuraCEEA,
-        [Description("Química (CEEQ)")]
+        [Display(Name = "Química (CEEQ)")]
         QuimicaCEEQ,
-        [Description("Geologia e Minas (CAGE)")]
+        [Display(Name = "Geologia e Minas (CAGE)")]
         GeologiaMinasCAGE,
-        [Description("Segurança (CEEST)")]
+        [Display(Name = "Segurança (CEEST)")]
         SegurancaCEEST,
-        [Description("Diversas")]
+        [Display(Name = "Diversas")]
         Diversas
     }
 }

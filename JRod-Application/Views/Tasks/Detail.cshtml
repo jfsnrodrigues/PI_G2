@@ -16,74 +16,79 @@
 <div class="modal-body">
     <div class="row">
         <div class="col-md-12">
-            <form>
+            <form asp-action="Update">
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                 <div class="form-group">
+                    <label asp-for="TaskId" class="control-label"></label>
+                    <input asp-for="TaskId" class="form-control" readonly />
+                </div>
+                <div class="form-group">
                     <label asp-for="Title" class="control-label"></label>
-                    <input asp-for="Title" class="form-control" disabled />
+                    <input asp-for="Title" class="form-control" />
                 </div>
                 <div class="form-group">
                     <label asp-for="Description" class="control-label"></label>
-                    @Html.TextAreaFor(x => x.Description, new { @class = "form-control", disabled = "disabled" })
+                    @Html.TextAreaFor(x => x.Description, new { @class = "form-control" })
                 </div>
                 <div class="form-group">
                     <label asp-for="Status" class="control-label"></label>
-                    <select asp-for="Status" asp-items="Html.GetEnumSelectList<JRodTasksStatus>()" class="form-control" disabled></select>
+                    <select asp-for="Status" asp-items="Html.GetEnumSelectList<JRodTasksStatus>()" class="form-control"></select>
                 </div>
                 <div class="form-group">
                     <label asp-for="DataInicio" class="control-label"></label>
-                    <input asp-for="DataInicio" class="form-control" disabled />
+                    <input asp-for="DataInicio" class="form-control" />
                 </div>
                 <div class="form-group">
                     <label asp-for="DataFim" class="control-label"></label>
-                    <input asp-for="DataFim" class="form-control" disabled />
+                    <input asp-for="DataFim" class="form-control" />
                 </div>
                 <div class="form-group">
                     <label asp-for="Protocolo" class="control-label"></label>
-                    <input asp-for="Protocolo" class="form-control" disabled />
+                    <input asp-for="Protocolo" class="form-control" />
                 </div>
                 <div class="form-group">
                     <label asp-for="Quantidade" class="control-label"></label>
-                    <input asp-for="Quantidade" class="form-control" disabled />
+                    <input asp-for="Quantidade" class="form-control" />
                 </div>
                 <div class="form-group">
                     <label asp-for="Interessado" class="control-label"></label>
-                    <input asp-for="Interessado" class="form-control" disabled />
+                    <input asp-for="Interessado" class="form-control" />
                 </div>
                 <div class="form-group">
                     <label asp-for="CreaspReg" class="control-label"></label>
-                    <input asp-for="CreaspReg" class="form-control" disabled />
+                    <input asp-for="CreaspReg" class="form-control" />
                 </div>
                 <div class="form-group">
                     <label asp-for="ProvidenciasAdotadas" class="control-label"></label>
-                    <input asp-for="ProvidenciasAdotadas" class="form-control" disabled />
+                    <input asp-for="ProvidenciasAdotadas" class="form-control" />
                 </div>
                 <div class="form-group">
                     <label asp-for="TipoAtividade" class="control-label"></label>
-                    <select asp-for="TipoAtividade" asp-items="Html.GetEnumSelectList<TipoAtividade>()" class="form-control" disabled></select>
+                    <select asp-for="TipoAtividade" asp-items="Html.GetEnumSelectList<TipoAtividade>()" class="form-control"></select>
                 </div>
                 <div class="form-group">
                     <label asp-for="TipoTrabalho" class="control-label"></label>
-                    <select asp-for="TipoTrabalho" asp-items="Html.GetEnumSelectList<TipoTrabalho>()" class="form-control" disabled></select>
+                    <select asp-for="TipoTrabalho" asp-items="Html.GetEnumSelectList<TipoTrabalho>()" class="form-control"></select>
                 </div>
                 <div class="form-group">
                     <label asp-for="Assunto" class="control-label"></label>
-                    <select asp-for="Assunto" asp-items="Html.GetEnumSelectList<Assunto>()" class="form-control" disabled></select>
+                    <select asp-for="Assunto" asp-items="Html.GetEnumSelectList<Assunto>()" class="form-control"></select>
                 </div>
                 <div class="form-group">
                     <label asp-for="TipoServico" class="control-label"></label>
-                    <select asp-for="TipoServico" asp-items="Html.GetEnumSelectList<TipoServico>()" class="form-control" disabled></select>
+                    <select asp-for="TipoServico" asp-items="Html.GetEnumSelectList<TipoServico>()" class="form-control"></select>
                 </div>
                 <div class="form-group">
                     <label asp-for="Camara" class="control-label"></label>
-                    <select asp-for="Camara" asp-items="Html.GetEnumSelectList<Camara>()" class="form-control" disabled></select>
+                    <select asp-for="Camara" asp-items="Html.GetEnumSelectList<Camara>()" class="form-control"></select>
                 </div>
                 <div class="form-group">
                     <label asp-for="UserId" class="control-label"></label>
-                    <input asp-for="UserId" class="form-control" disabled />
+                    <input asp-for="UserId" class="form-control" readonly />
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Save changes</button>
                 </div>
             </form>
         </div>
