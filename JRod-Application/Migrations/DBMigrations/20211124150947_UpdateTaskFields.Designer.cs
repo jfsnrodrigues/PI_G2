@@ -4,14 +4,16 @@ using JRod_Application.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace JRod_Application.Migrations.DBMigrations
 {
     [DbContext(typeof(Context))]
-    partial class ContextModelSnapshot : ModelSnapshot
+    [Migration("20211124150947_UpdateTaskFields")]
+    partial class UpdateTaskFields
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -35,8 +37,8 @@ namespace JRod_Application.Migrations.DBMigrations
                     b.Property<string>("CreaspReg")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime?>("DataFim")
-                        .HasColumnType("datetime2");
+                    b.Property<string>("DataFim")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime?>("DataInicio")
                         .HasColumnType("datetime2");

@@ -67,7 +67,7 @@ namespace JRod_Application.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("TaskId,Title,Description,Status,UserId")] Models.Task task)
+        public async Task<IActionResult> Create([Bind("TaskId,Title,Description,Status,UserId,DataInicio,Protocolo,Quantidade,Interessado,CreaspReg,ProvidenciasAdotadas,DataFim,TipoAtividade,TipoTrabalho,Assunto,TipoServico,Camara")] Models.Task task)
         {
             if (!ModelState.IsValid)
                 return View(task);
